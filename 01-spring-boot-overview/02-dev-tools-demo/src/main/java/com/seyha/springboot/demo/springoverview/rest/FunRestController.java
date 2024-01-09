@@ -11,10 +11,13 @@ public class FunRestController {
         return "<h1>Hello world<h1/>";
     }
 
-    @GetMapping("/get")
-    public String sage() {
-        String text = "Hello"
-                +" World";
-        return "<h1>"+ text+ "<h1/>";
+    @GetMapping("/workout")
+    public String getDetailWorkout() {
+        return "<h1>Run a hard 5K!<h1/>";
+    }
+
+    @GetMapping("/fortune")
+    public String getDetailFortune() {
+        return "<h1>Today is your lucky day.<h1/>";
     }
 }

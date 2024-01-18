@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+<h3>Student Registration Form</h3>
+
+<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+    First name: <input type="text" th:field="*{firstName}"/>
+    <br><br>
+
+    Last name: <input type="text" th:field="*{lastName}"/>
+    <br><br>
+
+
+    <!--  Loading list of countries on view page:  -->
+    <select th:field="*{country}">
+        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+    </select>
+    <br><br>
+
+    Favorite Programming Language:
+
+    <input type="radio" th:field="*{favoriteLanguage}"
+           th:each="tempLang: ${languages}"
+           th:value="${tempLang}"
+           th:text="${tempLang}"> <br>
+    <br><br>
+
+    Favorite Operating System:
+    <input type="checkbox" th:field="*{favoriteSystem}"
+           th:each="system : ${systems}"
+           th:value="${system}"
+           th:text="${system}"
+        > <br>
+    <br><br>
+
+    <button type="submit">Add</button>
+</form>
+
+</body>
+</html>

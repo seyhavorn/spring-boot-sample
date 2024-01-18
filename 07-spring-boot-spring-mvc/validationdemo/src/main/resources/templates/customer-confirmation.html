@@ -5,17 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Thymeleaf Demo</title>
-
-    <!-- reference CSS file:   -->
-    <link rel="stylesheet" th:href="@{/css/demo.css}">
+    <title>Customer Confirmation:</title>
 </head>
 <body>
-Hello World of Spring! <br><br>
-
-    Student name: <span th:text="${param.studentName}"></span> <br><br>
-
-    The message: <span th:text="${message}"></span> <br><br>
+<h3>
+ The Customer is confirmed: <span th:text="${customer.firstName + ' ' + customer.lastName}"></span>
+</h3>
 </body>
 </html>
